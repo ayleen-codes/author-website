@@ -1,0 +1,149 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: #fafafa;
+    color: #333;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+    color: white;
+  }
+  
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  nav {
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .book {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .book img {
+    width: 150px;
+    border-radius: 8px;
+  }
+  
+  form {
+    display: grid;
+    gap: 1rem;
+    max-width: 400px;
+  }
+  
+  input,
+  button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    background: #111;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #111;
+    color: white;
+  }
+  
+  footer a {
+    color: #ddd;
+    margin: 0 5px;
+    text-decoration: none;
+  }
+  
+  /* Make the books section content align with other sections */
+#books {
+    padding-left: 2rem;  /* same as other sections */
+    padding-right: 2rem;
+  }
+  
+  /* Book layout */
+  .book {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: flex-start; /* align top of image and text */
+  }
+  
+  /* Left column of the book */
+  .book-left {
+    flex: 1;
+    text-align: left;      /* left-align titles */
+    margin: 0;             /* remove extra margin */
+  }
+  
+  .book-left h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 0.3rem 0;      /* margin only above/below title */
+  }
+  
+  .book-left p {
+    margin: 0.3rem 0;
+  }
+  
+  .book-left img {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+  }
+  
+  .release-date {
+    font-style: italic;
+    color: #555;
+  }
+
+  .book-right {
+    flex: 2;
+  }
+  
+  .book-right .tagline {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .book-right p {
+    margin-bottom: 1rem;
+  }
+  
+  .book-right .links a {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+  }
+  
+  .book-right .links a:hover {
+    text-decoration: underline;
+  }
+  
