@@ -120,7 +120,15 @@ body {
   
   .release-date {
     font-style: italic;
+    font-weight: bold;
     color: #555;
+  }
+
+  .cover-design
+  {
+    font-style: italic;
+    color: #555;
+    font-size: 0.8rem;
   }
 
   .book-right {
