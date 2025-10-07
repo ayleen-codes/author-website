@@ -50,7 +50,7 @@ body {
   form {
     display: grid;
     gap: 1rem;
-    max-width: 400px;
+    max-width: 450px;
   }
   
   input,
@@ -79,32 +79,29 @@ body {
     text-decoration: none;
   }
   
-  /* Make the books section content align with other sections */
 #books {
-    padding-left: 2rem;  /* same as other sections */
+    padding-left: 2rem;  
     padding-right: 2rem;
   }
   
-  /* Book layout */
   .book {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 3rem;
-    align-items: flex-start; /* align top of image and text */
+    align-items: flex-start; 
   }
   
-  /* Left column of the book */
   .book-left {
     flex: 1;
-    text-align: left;      /* left-align titles */
-    margin: 0;             /* remove extra margin */
+    text-align: left;    
+    margin: 0;            
   }
   
   .book-left h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    margin: 0.3rem 0;      /* margin only above/below title */
+    margin: 0.3rem 0;  
   }
   
   .book-left p {
@@ -191,5 +188,23 @@ body {
     .testimonials {
       flex-direction: column;
     }
+  }
+  
+  .newsletter-optin {
+    margin-top: 1rem;
+  }
+  
+  .newsletter-optin p {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .newsletter-optin label {
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .newsletter-optin input[type="radio"] {
+    margin-right: 0.3rem;
   }
   
