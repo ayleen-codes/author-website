@@ -114,7 +114,17 @@ body {
     border-radius: 8px;
     margin: 0.5rem 0;
   }
-  
+
+    #amazon {
+        height: 30px;
+        max-width: 70px;
+    }
+
+    #kobo {
+        height: 30px;
+        max-width: 80px;
+    }
+
   .release-date {
     font-style: italic;
     font-weight: bold;
