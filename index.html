@@ -16,7 +16,60 @@
     ml('account', '747300');
 </script>
 <!-- End MailerLite Universal -->
-  
+  <style>
+        .container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .image-container {
+            flex: 0 0 auto;
+        }
+
+        .image-container img {
+            width: 250px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+
+        .form-container {
+            flex: 1;
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+        }
+
+        .tab-button.active {
+            background-color: #b12c4f;
+            color: white;
+            border-bottom: 1px solid #b12c4f;
+        }
+
+        .tab-content {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 0 5px 5px 5px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
   <header>
@@ -120,7 +173,44 @@
   </section>
 
   <section id="contact">
-    <div class="ml-embedded" data-form="isQXCS"></div>
+   <div class="container">
+   
+        <div class="image-container">
+            <img src="poster-1.png" alt="Static Image">
+        </div>
+
+        <div class="form-container">
+            <div class="tab-container">
+                <button class="tab-button active" onclick="openTab(event, 'free-book-form')">I want a free book!</button>
+                <button class="tab-button" onclick="openTab(event, 'already-read-form')">I've already read In Ice We Steel</button>
+            </div>
+
+            <div id="free-book-form" class="tab-content active">
+                <div class="ml-embedded" data-form="isQXCS"></div>
+            </div>
+
+            <div id="already-read-form" class="tab-content">
+                <div class="ml-embedded" data-form="7JDyHO"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(event, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
 
     <br><br>
     <h2>Get in Touch</h2>
