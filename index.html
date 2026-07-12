@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayleen K. Kyrstin | Author</title>
+  <title class="title">Ayleen K. Kyrstin | Author</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="In_Ice_We_Steel.png" type="image/png">
-  <!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '747300');
-</script>
-<!-- End MailerLite Universal -->
+ <script src="script.js"></script>
   <style>
         .container {
             #display: flex;
@@ -172,6 +164,44 @@
   <section id="preorder">
   </section>
 
+  <section id="quiz">
+     <div class="quiz-container">
+        <div class="quiz-header">
+          <h1>Which <i>In Ice We Steel</i> Character are you? Take the test and find out!</h1>
+          <img src="quiz.png" alt="All characters as wanted posters">
+      </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+        <div class="quiz-question" id="quiz-question">
+        </div>
+        <div class="quiz-options" id="quiz-options">
+        </div>
+        <div class="quiz-navigation">
+            <button id="prev-btn" class="btn-previous">Previous</button>
+            <button id="next-btn" class="btn">Next</button>
+            <button id="submit-btn" class="btn hidden">Submit</button>
+        </div>
+      <div class="result-container hidden" id="result-container">
+          <h2>Subscribe to Get Your Result!</h2>
+          <form id="subscription-form">
+              <input type="email" id="email-input" placeholder="Enter your email*" required>
+              <input type="text" id="name-input" placeholder="Enter your name*" required>
+              <input type="hidden" id="result-input">
+              <button type="submit" class="quiz-btn">Subscribe</button>
+          </form>
+          <p id="subscription-message"></p>
+          <br>
+          <br>
+          <button id="restart-btn" class="btn-previous">Retake Quiz</button>
+      </div>
+
+
+
+    </div>
+
+  </section>
+
   <section id="contact">
    <div class="container">
 		<h2> In Ice We Steel – available for FREE to newsletter subscribers </h2>
@@ -223,27 +253,11 @@
 
     <p>
       Stay tuned for my next book in the series: <em>Rise of Kerti #2</em>! <br>Coming in early 2027.  
-    <!--  
-      Sign up for my newsletter to be the first to hear about upcoming books, title and cover reveals, giveaways, contests, and get access to exclusive content.
-    -->
     </p>
-    <!--  
-    <form id="signupForm">
-        <input type="name" name="entry.285697634" placeholder="Your name (How should I address you in the emails)*" required>
-        <input type="email" name="entry.15198010" placeholder="Your email*" required>
-    <button type="submit">Subscribe</button>
-    </form>
-
-    <p id="formMessage" style="display:none; color:green; margin-top:1rem;">
-        ✅ Thank you for subscribing! Happy reading!
-    </p>
-    <script src="script.js"></script>
-    -->
   </section>
 
     <section id="updates">
     <h2>Latest Updates & Events</h2>
-    <!--  <p><strong>New Year Giveaway!🎉</p> -->
     In Ice We Steel is a Semi-Finalist in SPFBO 11 !
     <br>
     <br>
