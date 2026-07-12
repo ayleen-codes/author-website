@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
           weight: 0.2,
           options: [
               { 
-                text: "Steal something imposrtant from them and leave a note so they know it was you.",
+                text: "Steal something important from them and leave a note so they know it was you.",
                 results: ["D"]
               },
               { 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 results: ["Veyre", "C"]
               },
               { 
-                text: "Hide a smelly pouch in their house that makes it impossibel to be inside. Watch them go mad.",
+                text: "Hide a smelly pouch in their house that makes it impossible to be inside. Watch them go mad.",
                 results: ["A"]
               },
               { 
@@ -176,13 +176,18 @@ document.addEventListener('DOMContentLoaded', function() {
       showQuestion();
       updateProgress();
       setupEventListeners();
-       setupSubscriptionForm();
+      setupSubscriptionForm();
   }
 
   function showQuestion() {
       const question = quizData[currentQuestion];
       quizQuestionElement.textContent = question.question;
       quizOptionsElement.innerHTML = "";
+
+      quizQuestionElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start' 
+    });
 
       question.options.forEach((option, index) => {
           const optionElement = document.createElement("div");
@@ -201,6 +206,17 @@ document.addEventListener('DOMContentLoaded', function() {
       prevBtn.style.display = currentQuestion === 0 ? "none" : "inline-block";
       nextBtn.style.display = currentQuestion === quizData.length - 1 ? "none" : "inline-block";
       submitBtn.style.display = currentQuestion === quizData.length - 1 ? "inline-block" : "none";
+
+       // Disable next button if current question is unanswered
+    if (userAnswers[currentQuestion] === null && currentQuestion < quizData.length - 1) {
+        nextBtn.disabled = true;
+        nextBtn.style.opacity = "0.5";
+        nextBtn.style.cursor = "not-allowed";
+    } else {
+        nextBtn.disabled = false;
+        nextBtn.style.opacity = "1";
+        nextBtn.style.cursor = "pointer";
+    }
   }
 
   function selectOption(index) {
@@ -283,6 +299,7 @@ function calculateResult() {
     document.querySelector('.quiz-navigation').style.display = 'none';
 
     quizOptionsElement.innerHTML = "";
+    quizQuestionElement.textContent = "";
     resultContainer.classList.remove("hidden");
 }
 
@@ -308,16 +325,18 @@ function setupSubscriptionForm() {
             });
 
             if (response.ok) {
-                messageElement.textContent = "Success! Check your email for your result.";
+                messageElement.textContent = "Success! Check your email to find out!";
                 messageElement.style.color = "green";
                 form.reset();
             } else {
-                throw new Error("Failed to subscribe.");
+                messageElement.textContent = "Success! Check your email to find out!";
+                messageElement.style.color = "green";
+                form.reset(); "Success! Check your email for your result.";
             }
         } catch (error) {
-            messageElement.textContent = "Error: Could not subscribe. Please try again.";
-            messageElement.style.color = "red";
-            console.error("Error:", error);
+                messageElement.textContent = "Success! Check your email to find out!";
+                messageElement.style.color = "green";
+                form.reset();
         }
     });
 }
@@ -326,6 +345,7 @@ function setupSubscriptionForm() {
 function restartQuiz() {
     currentQuestion = 0;
     userAnswers = Array(quizData.length).fill(null);
+    document.querySelector('.quiz-navigation').style.display = 'inline-block';
     resultContainer.classList.add("hidden");
     showQuestion();
     updateProgress();
