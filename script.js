@@ -1,9 +1,4 @@
- (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', 747300);
-    
+   
 document.addEventListener('DOMContentLoaded', function() {
 
   const quizData = [
@@ -179,15 +174,24 @@ document.addEventListener('DOMContentLoaded', function() {
       setupSubscriptionForm();
   }
 
+  let isFirstQuestion = true;
+
+
   function showQuestion() {
       const question = quizData[currentQuestion];
       quizQuestionElement.textContent = question.question;
       quizOptionsElement.innerHTML = "";
 
-      quizQuestionElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start' 
-    });
+      if (!isFirstQuestion) {
+        quizQuestionElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+        if (isFirstQuestion) {
+            isFirstQuestion = false;
+        }
 
       question.options.forEach((option, index) => {
           const optionElement = document.createElement("div");
@@ -347,6 +351,7 @@ function restartQuiz() {
     userAnswers = Array(quizData.length).fill(null);
     document.querySelector('.quiz-navigation').style.display = 'inline-block';
     resultContainer.classList.add("hidden");
+    isFirstQuestion = true;
     showQuestion();
     updateProgress();
 }
