@@ -219,6 +219,13 @@ body {
     white-space: nowrap;
   }
 
+  @media (max-width: 768px) {
+    .book {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
   .testimonials {
     display: flex;
     justify-content: space-between;
@@ -441,7 +448,7 @@ body {
     font-weight: bold;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 768px) {
     .quiz-options {
         grid-template-columns: 1fr;
     }
@@ -469,7 +476,6 @@ body {
 
 
 
-/* Center the subscription form */
 #subscription-form {
     max-width: 400px;
     margin: 0 auto 20px;
@@ -491,7 +497,6 @@ body {
 }
 
 
-/* Reset default margins and padding */
 body, h2, h4, p, a {
   margin: 0;
   padding: 0;
