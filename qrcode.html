@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #qrcode {
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            display: block;
+        }
+        #download {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #download:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <canvas id="qrcode"></canvas>
+    <br>
+    <button id="download">Download QR Code</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const websiteUrl = "https://www.goodreads.com/book/show/242481517-in-ice-we-steel";
+            //"https://www.kobo.com/us/en/ebook/in-ice-we-steel";
+            //"https://www.amazon.com/dp/B0FVX3DPPV";
+            //"https://ayleen-k-kyrstin-author.com/quiz"; 
+            const qrcodeElement = document.getElementById("qrcode");
+
+            new QRious({
+                element: qrcodeElement,
+                value: websiteUrl,
+                size: 200,
+            });
+
+            
+            document.getElementById("download").addEventListener("click", function() {
+                const link = document.createElement("a");
+                link.download = "qrcode.png";
+                link.href = qrcodeElement.toDataURL("image/png");
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>
